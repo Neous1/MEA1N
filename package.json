@@ -1,0 +1,22 @@
+{
+  "name": "mea1n-app",
+  "version": "1.0.0",
+  "description": "MEAN stack application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neous1/MEA1N.git"
+  },
+  "keywords": [
+    "MEAN"
+  ],
+  "author": "Yvon J N",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neous1/MEA1N/issues"
+  },
+  "homepage": "https://github.com/Neous1/MEA1N#readme"
+}
