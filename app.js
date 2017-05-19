@@ -1,12 +1,14 @@
-require("./instantHello");
-var goodbye = require("./talk/goodbye");
-var talk = require("./talk");
-var question = require("./talk/question")
 
-talk.intro();
-talk.hello("YVON")
+var express = require ("express");
+var app = express();
 
-var answer = question.ask("What is the meaning of life")
-console.log(answer);
+app.set("port", 3000)
 
-goodbye();
+
+// app.listen(app.get("port"), function(){
+//  console.log("magic happens on port " + app.get("port"));
+// });
+var server = app.listen(app.get("port"), function(){
+    var port = server.address().port;
+ console.log("magic happens on port " + port);
+});
