@@ -40,7 +40,7 @@ module.exports.hotelsGetOne = function(req, res){
 //         .json(req.body);
 // };
 
-module.exports.hotelsAddOne = function(req, res) {
+module.exports.hotelsAddOne = function(req, res) { //not quite right
   console.log("POST new hotel");
   console.log(req.body);
   res
