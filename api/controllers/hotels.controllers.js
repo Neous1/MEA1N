@@ -1,6 +1,11 @@
+var dbconn = require("../data/dbconnection.js");
 var hotelData = require("../data/hotel-data.json");
 
 module.exports.hotelsGetAll = function(req, res){
+
+    var db = dbconn.get();
+
+    console.log("db", db)
     console.log("Get the hotels");
     console.log(req.query);
 
@@ -32,13 +37,13 @@ module.exports.hotelsGetOne = function(req, res){
 };
 
 
-// module.exports.hotelsAddOne = function(req, res){
-//     console.log("POST new hotel");
-//     console.log(req.body);
-//     res
-//         .status(200)
-//         .json(req.body);
-// };
+module.exports.hotelsAddOne = function(req, res){
+    console.log("POST new hotel");
+    console.log(req.body);
+    res
+        .status(200)
+        .json(req.body);
+};
 
 module.exports.hotelsAddOne = function(req, res) { //not quite right
   console.log("POST new hotel");

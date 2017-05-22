@@ -1,4 +1,5 @@
 
+require('./api/data/dbconnection.js').open();
 var express = require ("express");
 var app = express();
 var path = require("path");
@@ -15,7 +16,7 @@ app.use(function(req, res, next){
 
 app.use(express.static(path.join(__dirname,"public")));
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded( {extended: false} ));
 
 app.use("/api", routes);
 
