@@ -8,6 +8,7 @@ var ctrlReviews = require("../controllers/reviews.controllers.js")
 router
     .route("/hotels")
     .get(ctrlHotels.hotelsGetAll); // mappping  controller to a route
+    
 
 router
     .route("/hotels/:hotelId")
