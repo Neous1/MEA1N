@@ -29,8 +29,6 @@ Hotel
 };
 
 module.exports.hotelsGetOne = function(req, res){
-
-
     var hotelId = req.params.hotelId;
     // var thisHotel = hotelData[hotelId];
     console.log("Get hotelId", hotelId);
