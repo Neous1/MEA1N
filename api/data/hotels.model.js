@@ -40,7 +40,7 @@ var hotelSchema = new mongoose.Schema({
         max: 5,
         "default": 0
     },
-    Services : [String],
+    services : [String],
     description: String,
     photos: [String],
     currency: String,

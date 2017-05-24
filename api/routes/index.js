@@ -7,22 +7,23 @@ var ctrlReviews = require("../controllers/reviews.controllers.js")
 
 router
     .route("/hotels")
-    .get(ctrlHotels.hotelsGetAll); // mappping  controller to a route
-    
+    .get(ctrlHotels.hotelsGetAll) // mappping  controller to a route
+    .post(ctrlHotels.hotelsAddOne);
 
 router
     .route("/hotels/:hotelId")
     .get(ctrlHotels.hotelsGetOne);    
 
-router
-    .route("/hotels/new")
-    .post(ctrlHotels.hotelsAddOne)
 
     // Review Routes
 
+
 router
     .route("/hotels/:hotelId/reviews")
-    .get(ctrlReviews.reviewsGetAll); 
+    .get(ctrlReviews.reviewsGetAll) 
+    .post(ctrlReviews.reviewsAddOne); 
+
+
 router
     .route("/hotels/:hotelId/reviews/:reviewId")
     .get(ctrlReviews.reviewsGetOne); 
