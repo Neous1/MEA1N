@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="meanhotel">
     <head>  
         <title>MEAN hotel</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/custom.css">
     </head>
     <body>
-        <h1>MEAN hotel homepage</h1>
+        <div ng-view></div>
+
         <footer class="footer">
             <div class="container">
                 <p class="text-muted text-center">
-                    <a href="http://fullstacktraining.com" target="_blank"><img src="/images/fullstacktraining_Logo.png" height="26" alt="Full Stack Training" /></a>
+                    <a href="http://fullstacktraining.com" target="_blank"><img src="#" height="26" alt="Full Stack Training" /></a>
                 </p>
                 <p class="text-muted text-center">
                     <small>&copy; 2017 Yvon and his MEAN adventure</small>
@@ -19,5 +20,9 @@
             </div>
         </footer>
         <script src="jquery/jquery-2.2.4.min.js"></script>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="angular-app/app.js"></script>
+        <script src="angular-app/hotel-list/hotel-list-controller.js"></script>
     </body>
 </html>

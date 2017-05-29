@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <title>My Angular Adventure</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>My Angular Adventure</h1>
+        <p>hello, {{user}}</p>
+                <div ng-init="numbers = [0,1,2,3,4,5,6,7]">
+            <ul>
+                <li ng-repeat="number in numbers" ng-class="{red:$even, green: $odd}">{{number}}</li>
+            </ul>
+        </div>  
+        <hr>
+        <input type="text" name"" id="" ng-model="user">
+                <hr>
+        <div ng-init="number = 0">
+            <button ng-click="number = number +1">+1</button>
+            <button ng-click="number = number -1">-1</button>
+            <p>{{number}}</p>
+
+        Show me the paragraph <input type="checkbox" ng-model="isChecked">
+        <p ng-if="isChecked">Secret message</p>
+        <hr>
+
+        <div ng-init="number = 19">
+            <input type="text" ng-model="guess" ng-class="{red: guess != number, green: guess == number}">
+            <p ng-hide="guess !=number">Correct</p>
+            <p ng-show="guess !=number">Incorrect</p>
+        </div>         
+        <hr>
+
+
+
+
+
+
+
+
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" type="text/javascript"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js" type="text/javascript"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    </body>
+
+</html>
