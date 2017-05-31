@@ -20,7 +20,7 @@ function HotelController($route, $routeParams, hotelDataFactory){
         };
         if (vm.reviewForm.$valid){
             hotelDataFactory.postReview(id, postData).then(function(response){
-                if(response.status === 201){
+                if(response.status === 201 ){
                     $route.reload();
                 }
             }).catch(function(error){
