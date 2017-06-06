@@ -1,4 +1,4 @@
-angular.module("meanhotel").directive("navigation", mhNavigation);
+angular.module("meanhotel").directive("mhNavigation", mhNavigation);
 
 function mhNavigation(){
     return{
@@ -6,3 +6,4 @@ function mhNavigation(){
         templateUrl: "angular-app/navigation-directive/navigation-directive.html"
     };
 }
+
