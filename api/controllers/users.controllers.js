@@ -31,8 +31,8 @@ module.exports.login = function(req, res){
     console.log("logging in user");
     var username = req.body.username;
     var password = req.body.password;
-    console.log("on loggin",username)
-    console.log("on loggin",password)
+    console.log("User username is ",username)
+    console.log("User password is ",password) // take these out in prod
 
 
     User.findOne({
@@ -48,8 +48,8 @@ module.exports.login = function(req, res){
             if(bcrypt.compareSync(password,user.password)){
                 console.log("User found", user);
                 console.log(user.password)
-                // var token = jwt.sign({ username: user.username}, "s3cr3t",{ expiresIn: 3600} );
-                // res.status(200).json({success: true, token: token});
+                var token = jwt.sign({ username: user.username}, "s3cr3t",{ expiresIn: 3600} );
+                res.status(200).json({success: true, token: token});
                 res.status(200).json(user);
             }
             else{
@@ -60,3 +60,25 @@ module.exports.login = function(req, res){
         }
     });
 };
+
+module.exports.authenticate = function(req, res, next){
+    var headerExists = req.headers.authorization;
+    if(headerExists){
+        var token = req.headers.authorization.split(" ")[1];// Authorizatin bearer xxx
+        jwt.verify(token, "s3cr3t", function(error, decoded){
+            if (error){
+                console.log(error);
+                res.status(401).json("Unauthorized");
+                return;
+            }
+            else {
+                console.log(token)
+                req.user = decoded.username;
+                next();
+            }
+        });
+    }
+    else{
+        res.status(403).json("No token provided")
+    }
+}

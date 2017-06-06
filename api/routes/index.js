@@ -8,7 +8,7 @@ var ctrlUsers = require("../controllers/users.controllers.js")
 //Hotels routes
 router
     .route("/hotels")
-    .get(ctrlHotels.hotelsGetAll) // mappping  controller to a route
+    .get(ctrlUsers.authenticate, ctrlHotels.hotelsGetAll) // mappping  controller to a route
     .post(ctrlHotels.hotelsAddOne);
 
 router
