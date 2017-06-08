@@ -1,7 +1,9 @@
 angular.module('meanhotel', ['ngRoute']).config(config)
 
-
-function config($routeProvider){
+function config($routeProvider, $locationProvider){
+//This helps remove issues spawned by #! <-- hashbang!
+$locationProvider.hashPrefix('');
+ 
     $routeProvider
     .when('/', {
         templateUrl:"angular-app/main/main.html"
