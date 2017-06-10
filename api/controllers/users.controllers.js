@@ -48,9 +48,9 @@ module.exports.login = function(req, res){
             if(bcrypt.compareSync(password,user.password)){
                 console.log("User found", user);
                 console.log(user.password)
-                var token = jwt.sign({ username: user.username}, "s3cr3t",{ expiresIn: 3600} );
+                var token = jwt.sign({ username: user.username}, "s3cr3t",{ expiresIn: 7200} );
                 res.status(200).json({success: true, token: token});
-                res.status(200).json(user);
+                // res.status(200).json(user);
             }
             else{
                 res.status(401).json("Unauthorized");

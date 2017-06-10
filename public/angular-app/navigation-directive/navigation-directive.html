@@ -13,8 +13,9 @@
             <ul class="nav navbar-nav">
                 <li ng-class="vm.isActiveTab(" ")" class="active"><a href="#/">Home</a></li>
                 <li ng-class="vm.isActiveTab("hotels")"><a href="#/hotels">Hotels</a></li>
-                <li ng-class="vm.isActiveTab("register")"><a href="#/register">Register</a></li>
-            </ul>
+                <li ng-class="vm.isActiveTab("register")" ng-if="!vm.isLoggedIn()"><a href="#/register">Register</a></li>
+                <!--<li ng-class="vm.isActiveTab("profile")" ng-if="vm.isLoggedIn()"><a href="#/register">profile</a></li>-->
+            <!--</ul>
             <form ng-if="!vm.isLoggedIn()" class="navbar-form navbar-right" role="login" ng-submit="vm.login()">
                 <div class="form-group" ng-class="{"has-error": vm.error}">
                     <input type="text" class="form-control input-sm" placeholder="Username" ng-model="vm.username" autocapitalize="none">
@@ -31,7 +32,7 @@
         </div>
     </div>
 
-</nav>-->
+</nav>-->-->
 
 <nav ng-controller="LoginController as vm" class="navbar navbar-default navbar-fixed-top" ng-init="vm.init()">
  <div class="container">
