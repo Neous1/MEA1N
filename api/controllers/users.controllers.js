@@ -31,8 +31,6 @@ module.exports.login = function(req, res){
     console.log("logging in user");
     var username = req.body.username;
     var password = req.body.password;
-    console.log("User username is ",username)
-    console.log("User password is ",password) // take these out in prod
 
 
     User.findOne({

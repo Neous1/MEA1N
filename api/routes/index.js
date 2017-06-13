@@ -1,14 +1,13 @@
 var express = require ("express");
 var router = express.Router();
 
-var ctrlHotels = require("../controllers/hotels.controllers.js")
-var ctrlReviews = require("../controllers/reviews.controllers.js")
-var ctrlUsers = require("../controllers/users.controllers.js")
+var ctrlHotels = require("../controllers/hotels.controllers.js");
+var ctrlReviews = require("../controllers/reviews.controllers.js");
+var ctrlUsers = require("../controllers/users.controllers.js");
 
 //Hotels routes
 router
     .route("/hotels")
-    // .get(ctrlUsers.authenticate, ctrlHotels.hotelsGetAll) // mappping  controller to a route
     .get(ctrlHotels.hotelsGetAll) // mappping  controller to a route
     .post(ctrlHotels.hotelsAddOne);
 
