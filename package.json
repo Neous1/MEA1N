@@ -21,8 +21,13 @@
   },
   "homepage": "https://github.com/Neous1/MEA1N#readme",
   "dependencies": {
+    "angular": "^1.6.4",
+    "angular-jwt": "^0.1.9",
+    "angular-route": "^1.6.4",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
     "mongodb": "^2.2.26",
     "mongoose": "^4.10.2"
   },

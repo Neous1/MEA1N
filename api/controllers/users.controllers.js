@@ -72,7 +72,7 @@ module.exports.authenticate = function(req, res, next){
                 return;
             }
             else {
-                console.log(token)
+                console.log("here is a token", token)
                 req.user = decoded.username;
                 next();
             }

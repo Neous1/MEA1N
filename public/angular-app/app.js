@@ -51,7 +51,7 @@ $httpProvider.interceptors.push("AuthInterceptor");
 
 function run($rootScope, $location, $window, AuthFactory){
     $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute){
-        if(nextRoute.access !== undefined && nextRoute.access.restricted && $window.sessionStorage.token && !AuthFactory.isLoggedIn){
+        if(nextRoute.access !== undefined && nextRoute.access.restricted && !$window.sessionStorage.token && !AuthFactory.isLoggedIn){
             event.preventDefault();
             $location.path("/");
         }
